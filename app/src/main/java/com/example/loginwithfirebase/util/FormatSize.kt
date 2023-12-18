@@ -1,5 +1,6 @@
 package com.example.loginwithfirebase.util
 
+
 // Function to convert byter to KB and MB
 fun formatSize(size: Long): String? {
     var size = size
@@ -10,6 +11,10 @@ fun formatSize(size: Long): String? {
         if (size >= 1024) {
             suffix = "MB"
             size /= 1024
+            if (size >= 1024) {
+                suffix = "GB"
+                size /= 1024
+            }
         }
     }
     val resultBuffer = StringBuilder(java.lang.Long.toString(size))
