@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Circle
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
@@ -176,11 +177,22 @@ fun CircularProgressBar(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
-                    Text(
-                        text = (curPercentage.value * number).toInt().toString() + "%",
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
-                    )
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(3.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            modifier = modifier.size(14.dp),
+                            imageVector = Icons.Default.Circle,
+                            contentDescription = null,
+                            tint = DarkBlue
+                        )
+                        Text(
+                            text = (curPercentage.value * number).toInt().toString() + "%",
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                     Spacer(modifier = modifier.height(12.dp))
                     Text(
                         text = displayTextMemoryUsage,
