@@ -71,4 +71,7 @@ dependencies {
 
     // navigation
     implementation("androidx.navigation:navigation-compose:2.7.5")
+
+    // extended icon
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
 }
